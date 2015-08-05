@@ -1,4 +1,4 @@
 # officeora
-This is the official website for Office ORA.
+This is the official website of Office ORA.
 
 
