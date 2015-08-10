@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{$basicinfo.lang|escape}">
+<head>
+    <meta charset="utf-8" />
+    <title>{$basicinfo.title|escape}</title>
+    <base href="{$basicinfo.baseurl|escape}" />
+    <meta name="application-name" content="{$basicinfo.app_name|escape}" />
+    <meta name="author" content="{$basicinfo.author|escape}" />
+    <meta name="generator" content="{$basicinfo.generator|escape}" />
+    <meta name="description" content="{$basicinfo.desc|escape}" />
+    <meta name="keywords" contet="{$basicinfo.keywords|escape}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+{if $basicinfo.canonical}
+    <link rel="canonical" href="{$basicinfo.canonical|escape}" />
+{/if}
+    <link rel="shortcut icon" href="{$basicinfo.baseurl|escape}favicon.ico" />
+{foreach $assets.js as $js}
+    <script type="text/javascript" src="{$js|escape}"></script>
+{/foreach}
+{foreach $assets.css as $css}
+    <link href="{$css|escape}" rel="stylesheet" />
+{/foreach}
+{foreach $assets.iecss as $css}
+<!--[if IE]>
+    <link href="{$css|escape}" rel="stylesheet" />
+<![endif]-->
+{/foreach}
+<!--[if lt IE 8]>
+    <script src="assets/plugins/modernizr.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        webappobj.init();
+    });
+</script>
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="66" >
+<!--[if lt IE 7]>
+     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+

@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    var webappobj = new webapp(); 
+{if $configinfo}
+    webappobj.configinfo = {$configinfo};
+{/if}
+{if $notification != null}
+    webappobj.notification = {$notification};
+{/if}
+</script>
+{if $csrftoken}
+{$csrftoken}
+{/if}
+</body>
+</html>

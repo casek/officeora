@@ -1,0 +1,66 @@
+.hero-title {
+    margin-bottom: 24px;
+    letter-spacing: -4px;
+}
+.hero-text-title {
+    display: block;
+    font-size: 24px;
+    letter-spacing: 0px;
+}
+#js-rotating {
+    font-size: 30px;
+    font-weight: lighter;
+}
+.hero-text-rotating {
+    font-size: 24px;
+}
+
+.contact-details-body {
+    margin-bottom: 21px;
+}
+
+#profile h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#services .text-grey {
+    font-size: 14px;
+}
+
+#services .item {
+    height: 280px;
+}
+
+.error {
+    color: #f00 !important;
+    font-weight: bold !important;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+    -moz-animation: spin3 .7s infinite linear;
+}
+@-moz-keyframes spin3 {
+    from { -moz-transform: rotate(0deg);}
+    to { -moz-transform: rotate(360deg);}
+}
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+#knowledge .item h4 {
+    margin-bottom: 24px;
+}
+
+#knowledge .item p {
+    margin: 16px 0; 
+    font-size: 12px;
+    height: 300px;
+}

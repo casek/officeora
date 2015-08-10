@@ -1,0 +1,6 @@
+{include file='includes/htmlheader.smarty'}
+{$header}
+{$menu01}
+{$contents}
+{$footer}
+{include file='includes/htmlfooter.smarty'}

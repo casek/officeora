@@ -1,2 +1,10 @@
+composer.lock
+fuel/vendor
 fuel/app/logs/*/*/*
 fuel/app/cache/*/*
+fuel/app/config/crypt.php
+fuel/core
+fuel/packages
+fuel/app/tmp
+
+public/berg-v1.3
