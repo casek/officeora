@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 
-                <a class="navbar-brand visible-xs visible-sm" href="#page-top">BERG</a>
+                <a class="navbar-brand visible-xs visible-sm" href="#page-top">Office ORA</a>
             </div>
             <!-- //.navbar-header -->
             

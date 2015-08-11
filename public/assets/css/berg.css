@@ -638,7 +638,7 @@ header.hero.parallax-yes > .parallax > .bcg {
   font-size: 28px;
   font-weight: 700;
   color: #a1a1a1;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   letter-spacing: 0.1em;
   height: 65px;
   line-height: 65px;

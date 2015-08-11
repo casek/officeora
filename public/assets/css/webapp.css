@@ -64,3 +64,9 @@
     font-size: 12px;
     height: 300px;
 }
+
+@media (max-width: 460px) {
+    #knowledge .item p {
+        height: auto;
+    }
+}
