@@ -6,7 +6,7 @@
                     <div class="col-md-8 col-md-offset-2 text-center">
                         <h2 class="section-title uppercase">オフィスORAが注目して取り組んでいるポイント</h2>
 
-                        <p class="section-subtitle">オフィスORAが注目して取り組んでいるITプロジェクトにまつわるポイントを紹介します<br>（2015年8月更新）</p>
+                        <p class="section-subtitle">オフィスORAが注目して取り組んでいるITプロジェクトにまつわるポイントを紹介します<br>（各項目の数値は進捗率です。2015年8月更新）</p>
 
                         <span class="divider center"></span>
                     </div>

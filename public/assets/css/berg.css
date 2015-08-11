@@ -995,7 +995,7 @@ header.hero.parallax-yes > .parallax > .bcg {
 
 #profile .pp-wrapper .profile-picture.style-one {
   position: absolute;
-  top: 0;
+  top: 60px;
   left: 0;
   width: 100%;
   height: auto;

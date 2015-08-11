@@ -17,7 +17,12 @@
                     ITコンサルティング<div class='hero-text-rotating'>IT Consulting</div>
                 </span></a></h1>
                 
-                <p>個人事業でやってます<br>My backpack is always FULL.<br>Bring your brain!</p>
+                <p>
+                    すべてのITプロジェクトを「価値」を生むものに<br>
+                    小さいプロジェクトからも、バリューストリームを創りましょう<br>
+                    My backpack is always FULL.<br>
+                    Bring your brain!
+                </p>
                 
                 <div class="page-scroll">
                     <a href="#profile" class="btn btn-lg btn-custom">
