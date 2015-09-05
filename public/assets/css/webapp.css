@@ -62,11 +62,15 @@
 #knowledge .item p {
     margin: 16px 0; 
     font-size: 12px;
-    height: 300px;
+    height: 520px;
 }
 
 @media (max-width: 960px) {
     #knowledge .item p {
         height: auto;
     }
+}
+
+#valuestream {
+    width: 100%;
 }
