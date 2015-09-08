@@ -32,7 +32,7 @@
                                     「価値」を生みつづける「<b>バリューストリーム</b>」にはどのような要素があるのかは<a href="assets/valuestream.pdf">こちらの資料をご覧くだい。</a><br>
                                     これらを顧客企業の中でどの様に実践されるのがらいいのかについて、顧客企業の方針・文化・状況に合わせてアレンジし実現するお手伝いをしたいと考えています。<br>
 
-                                    <img src="assets/img/valuestream.png" id="valuestream" class="thumbnail">
+                                    <a href="assets/valuestream.pdf"><img src="assets/img/valuestream.png" id="valuestream" class="thumbnail"></a>
                                 </p>
                             </div>
                             <!-- //.item -->
