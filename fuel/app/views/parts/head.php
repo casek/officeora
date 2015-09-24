@@ -10,18 +10,19 @@
                 </h1>
                 
                 <h1><a href='#services'><span id="js-rotating">
-                    システム開発<div class='hero-text-rotating'>System Development</div>
+                    トータルITコンサルティング<div class='hero-text-rotating'>Total IT Consulting</div>
+                    |
+                    ITプロジェクト構築<div class='hero-text-rotating'>IT Project Building</div>
                     |
                     プロジェクトマネージメント<div class='hero-text-rotating'>Project Management</div>
                     |
-                    ITコンサルティング<div class='hero-text-rotating'>IT Consulting</div>
+                    システム設計・開発<div class='hero-text-rotating'>System Development</div>
                 </span></a></h1>
                 
                 <p>
                     すべてのITプロジェクトを「価値」を生むものに！<br>
-                    バリューストリームを生みだしましょう<br>
                     My backpack is always FULL.<br>
-                    Bring your brain!
+                    Bring Your Brain!
                 </p>
                 
                 <div class="page-scroll">
