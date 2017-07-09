@@ -23,7 +23,7 @@ return array(
 	 *
 	 * Set this to null to have it automatically detected.
 	 */
-	'base_url'  => 'http://office-ora.com/',
+	'base_url'  => 'http://www.office-ora.com/',
 
 	/**
 	 * url_suffix - Any suffix that needs to be added to
