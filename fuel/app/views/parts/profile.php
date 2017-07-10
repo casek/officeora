@@ -2,7 +2,7 @@
     <section id="profile" class="section">
         <div class="container section-wrapper">
             <div class="section-content">
-                <div class="row">          
+                <div class="row">
                     <div class="col-md-7 match-height">
 
                         <!-- PROFILE TEXT START -->
@@ -48,7 +48,7 @@
                                     <ul class="list-unstyled text-grey">
                                         <li>オフィスORA (Office ORA)</li>
                                         <li>代表 六藤圭介 (Keisuke Mutoh)</li>
-                                        <li>東京都中央区佃2-2</li>
+                                        <li>東京都八王子市八日町8-1-1205</li>
                                         <li>kmutoh[at mark]office-ora.com</li>
                                     </ul>
                                 </div>
@@ -56,18 +56,18 @@
 
                                 <div class="col-sm-6 col-md-7">
                                     <a href="assets/valuestream.pdf" class="btn btn-lg btn-custom">
-                                        <i class="icon-File-Download"></i> 「ITバリューストリーム<br>6つの分断」ダウンロード 
+                                        <i class="icon-File-Download"></i> 「ITバリューストリーム<br>6つの分断」ダウンロード
                                     </a>
                                 </div>
                                 <div class="col-sm-6 col-md-7">
                                     <a href="assets/resume.pdf" class="btn btn-lg btn-custom">
-                                        <i class="icon-File-Download"></i> 業務履歴ダウンロード 
+                                        <i class="icon-File-Download"></i> 業務履歴ダウンロード
                                     </a>
                                 </div>
                                 <!-- //.col-md-6 -->
                             </div>
                             <!-- //.row -->
-<?php include APPPATH.'views/parts/social.php'; ?>                   
+<?php include APPPATH.'views/parts/social.php'; ?>
                         </div>
                         <!-- //CONTACT DETAILS END -->
 
