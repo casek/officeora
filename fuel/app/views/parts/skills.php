@@ -13,7 +13,7 @@
                     <!-- //.col-md-8 -->
                 </div>
                 <!-- //.row -->
-                
+
                 <!-- BAR CHART START -->
                 <div class="row">
                     <div class="col-sm-6 col-md-6">
@@ -26,7 +26,7 @@
                                     <span class="item-progress" data-percent="80"></span>
                                 </div>
                                 <!-- //.bar -->
-                                
+
                                 <p>
                                     ITプロジェクトが企業のビジネスとしっかりと絡み合って「価値」を生みだしつづけるために何をしたらいいか？という永遠のテーマを追求しています。<br>
                                     「価値」を生みつづける「<b>バリューストリーム</b>」にはどのような要素があるのかは<a href="assets/valuestream.pdf">こちらの資料をご覧くだい。</a><br>
@@ -41,8 +41,8 @@
                                 <h4>オープンソースDevOpsツール</h4>
 
                                 <div class="bar">
-                                    <span class="percent">10%</span>
-                                    <span class="item-progress" data-percent="10"></span>
+                                    <span class="percent">60%</span>
+                                    <span class="item-progress" data-percent="60"></span>
                                 </div>
                                 <!-- //.bar -->
 
@@ -63,8 +63,8 @@
                                 <h4>Bootstrapping</h4>
 
                                 <div class="bar">
-                                    <span class="percent">60%</span>
-                                    <span class="item-progress" data-percent="60"></span>
+                                    <span class="percent">70%</span>
+                                    <span class="item-progress" data-percent="70"></span>
                                 </div>
                                 <!-- //.bar -->
 
@@ -81,8 +81,8 @@
                                 <h4>テスト自動化</h4>
 
                                 <div class="bar">
-                                    <span class="percent">75%</span>
-                                    <span class="item-progress" data-percent="75"></span>
+                                    <span class="percent">80%</span>
+                                    <span class="item-progress" data-percent="80"></span>
                                 </div>
                                 <!-- //.bar -->
 
@@ -91,7 +91,8 @@
                                     エンジニアレベルのユニットテスト、リリース前の結合テストやユーザー受け入れテスト、そして負荷テストやユーザービリティテストを含む非機能テスト、自動化できない部分もありつつも多くは自動化可能で、そのことが継続的デリバリーを支え、本質的には継続的に「価値」を提供し続ける「バリューストリーム」実現のキーポイントになっています。<br>
                                     テストの設計はだれもができるわけではなく、作っているエンジニアの能力をもってしても難しい場合があります。<br>
                                     故に「コストがかかる」と思われがちで、多くの中小規模のITプロジェクトでは省略されてしまっているのが現状です。<br>
-                                    オフィスORAはテスト自動化がもつ本質的ポイントをあらゆる規模のITプロジェクトでも省略せずに導入できるようになんとかしたいと考えており、その為の準備を進めています。
+                                    オフィスORAはテスト自動化がもつ本質的ポイントをあらゆる規模のITプロジェクトでも省略せずに導入できるようになんとかしたいと考えており、その為の準備を進めています。<br>
+                                    <span class="red">実績</span>：2016年1月 <a href="https://github.com/EC-CUBE/eccube-codeception" target="_blank">EC-CUBE3用の結合テスト自動化環境</a>を開発（<a href="http://codeception.com/" target="_blank">テストフレームワーク Codeception</a>を利用）
                                 </p>
                             </div>
                             <!-- //.item -->
@@ -105,6 +106,6 @@
             <!-- //.section-content -->
         </div>
         <!-- //.container -->
-        
+
     </section>
     <!-- //KNOWLEDGE SECTION END -->

@@ -60,9 +60,9 @@
 }
 
 #knowledge .item p {
-    margin: 16px 0; 
+    margin: 16px 0;
     font-size: 12px;
-    height: 520px;
+    height: 560px;
 }
 
 @media (max-width: 960px) {
@@ -73,4 +73,8 @@
 
 #valuestream {
     width: 100%;
+}
+
+.red {
+  color: #f00;
 }
