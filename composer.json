@@ -17,12 +17,12 @@
         "php": ">=5.3.3",
         "phpunit/phpunit": "4.7.*",
         "composer/installers": "~1.0",
-        "fuel/core": "dev-1.7/master",
-        "fuel/oil": "dev-1.7/master",
-        "fuel/orm": "dev-1.7/master",
-        "fuel/parser": "dev-1.7/master",
+        "fuel/core": "dev-1.8/master",
+        "fuel/oil": "dev-1.8/master",
+        "fuel/orm": "dev-1.8/master",
+        "fuel/parser": "dev-1.8/master",
         "smarty/smarty": "3.*",
-        "monolog/monolog": "1.5.*"
+        "monolog/monolog": "1.18.*"
     },
     "suggest": {
         "dwoo/dwoo" : "Allow Dwoo templating with the Parser package",
