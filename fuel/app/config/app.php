@@ -16,7 +16,7 @@ return array(
     'keywords'      => 'オフィスORA,ITコンサルティング,システム開発',
     'app_name'      => 'Office-ORA-Website',
     'author'        => 'Office ORA',
-    'copyright'     => '&copy; 2015 - <a href="http://office-ora.com/">Office ORA</a>',
+    'copyright'     => '&copy; 2015 - <a href="https://office-ora.com/">Office ORA</a>',
     'mail' =>  array(
         'sender' => 'Office ORA <no-reply@office-ora.com>',
         'signature' => ' --
