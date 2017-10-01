@@ -137,8 +137,8 @@ class Controller_Base extends Controller_Template
                 'https://use.fontawesome.com/3804ecbfcb.js',
             ),
             'css'       => array(
-                'http://fonts.googleapis.com/css?family=Lato:400,700',
-                'http://fonts.googleapis.com/css?family=Raleway:400,700',
+                'https://fonts.googleapis.com/css?family=Lato:400,700',
+                'https://fonts.googleapis.com/css?family=Raleway:400,700',
                 'assets/plugins/bootstrap/css/bootstrap.min.css',
                 'assets/plugins/icons-mind/style.css',
                 'assets/plugins/jpreloader/css/jpreloader.css',
