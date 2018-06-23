@@ -18,8 +18,8 @@ require COREPATH.'bootstrap.php';
  * Fuel::STAGING
  * Fuel::PRODUCTION
  */
-\Fuel::$env = (isset($_SERVER['FUEL_ENV']) ? $_SERVER['FUEL_ENV'] : \Fuel::DEVELOPMENT);
+\Fuel::$env = (getenv('FUEL_ENV')=='')?\Fuel::PRODUCTION:getenv('FUEL_ENV');
+//\Fuel::$env = (isset($_SERVER['FUEL_ENV']) ? $_SERVER['FUEL_ENV'] : \Fuel::PRODUCTION);
 
 // Initialize the framework with the config file.
 \Fuel::init('config.php');
-

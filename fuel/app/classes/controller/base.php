@@ -2,7 +2,7 @@
 /**
  * base controller of the ssbs for fuelphp
  *
- * @package     officeora 
+ * @package     officeora
  * @version     1.0
  * @author      Keisuke Mutoh (Office ORA kmutoh@office-ora,com)
  * @license     MIT License
@@ -13,7 +13,7 @@
 /**
  * base controller class
  *
- * @package     officeora 
+ * @package     officeora
  */
 class Controller_Base extends Controller_Template
 {
@@ -33,7 +33,7 @@ class Controller_Base extends Controller_Template
     public function before()
     {
         parent::before();
-        
+
         // check csrf token when posted some data.
         if(Input::method() == 'POST') {
             if(is_null(Input::post(Config::get('security.csrf_token_key'))) ||
@@ -48,7 +48,7 @@ class Controller_Base extends Controller_Template
         }
     }
 
-    /** 
+    /**
      * proivide default page on this web application
      *
      * @access  public
@@ -69,8 +69,8 @@ class Controller_Base extends Controller_Template
         */
     }
 
-    /** 
-     * logoff 
+    /**
+     * logoff
      *
      * @access  public
      */
@@ -80,7 +80,7 @@ class Controller_Base extends Controller_Template
         return Request::forge('page')->execute();
     }
 
-    /** 
+    /**
      * proivide 404 error page on this web application
      *
      * @access  public
@@ -92,12 +92,14 @@ class Controller_Base extends Controller_Template
         $this->template->contents = View_Smarty::forge('pages/404',$data,false);
     }
 
-    /** 
-     * the default html header 
+    /**
+     * the default html header
      *
      * @access  protected
      */
     protected function htmlheader() {
+
+
         $this->template->basicinfo = array(
             'lang'      => Config::get('language'),
             'title'     => Config::get('app.title_base'),
@@ -157,8 +159,8 @@ class Controller_Base extends Controller_Template
         );
     }
 
-    /** 
-     * the default html footer 
+    /**
+     * the default html footer
      *
      * @access  protected
      */
@@ -188,8 +190,8 @@ class Controller_Base extends Controller_Template
 
     }
 
-    /** 
-     * the default hader 
+    /**
+     * the default hader
      *
      * @access  protected
      * @return  string
@@ -198,8 +200,8 @@ class Controller_Base extends Controller_Template
         return '';
     }
 
-    /** 
-     * the default footer 
+    /**
+     * the default footer
      *
      * @access  protected
      * @return  string
@@ -208,8 +210,8 @@ class Controller_Base extends Controller_Template
         return '';
     }
 
-    /** 
-     * the default menu01 
+    /**
+     * the default menu01
      *
      * @access  protected
      * @return  string
@@ -218,8 +220,8 @@ class Controller_Base extends Controller_Template
         return '';
     }
 
-    /** 
-     * the default menu02 
+    /**
+     * the default menu02
      *
      * @access  protected
      * @return  string
@@ -228,8 +230,8 @@ class Controller_Base extends Controller_Template
         return '';
     }
 
-    /** 
-     * the default sidebar01 
+    /**
+     * the default sidebar01
      *
      * @access  protected
      * @return  string
@@ -238,8 +240,8 @@ class Controller_Base extends Controller_Template
         return '';
     }
 
-    /** 
-     * the default sidebar02 
+    /**
+     * the default sidebar02
      *
      * @access  protected
      * @return  string
@@ -248,8 +250,8 @@ class Controller_Base extends Controller_Template
         return '';
     }
 
-    /** 
-     * the default contents 
+    /**
+     * the default contents
      *
      * @access  protected
      * @return  string

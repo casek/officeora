@@ -1,7 +1,8 @@
 <?php
 return array(
 	'base_url'  => 'http://office-ora.com/',
-    'cookie' => array(
-        'path' => '/',
-    ),
+  'log_threshold'    => Fuel::L_ERROR,
+  'cookie' => array(
+    'path' => '/',
+  ),
 );

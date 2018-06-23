@@ -6,8 +6,8 @@
 return array(
 	'master' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=192.168.50.100;dbname=ssbs',
-			'username'   => 'webuser',
+			'dsn'        => 'mysql:host=192.168.50.19;dbname=officeora',
+			'username'   => 'root',
 			'password'   => 'bringyourbrain',
 		),
 	),
