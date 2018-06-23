@@ -21,6 +21,7 @@
         "fuel/oil": "dev-1.8/master",
         "fuel/orm": "dev-1.8/master",
         "fuel/parser": "dev-1.8/master",
+        "fuel/email": "dev-1.8/master",
         "smarty/smarty": "3.*",
         "monolog/monolog": "1.18.*"
     },
