@@ -9,7 +9,7 @@
                         <div class="profile-text padding-right-yes">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2 class="section-title uppercase">こんにちは。オフィスORAです</h2>
+                                    <h2 class="section-title uppercase"><img src="/assets/img/casek.png" class="hello-casek-img">こんにちは。オフィスORAです</h2>
 
                                     <p>
                                         オフィスORAは六藤圭介（ムトウケイスケ）が20年に渡り運営しているIT系個人事業です。
@@ -22,15 +22,19 @@
                                     <span class="divider"></span>
 
                                     <p class="text-grey">
-                                        ITプロジェクトの効率化を指向して、アジャイル開発手法やDevOpsを追求していて気付いたことがあります。<br>
-                                        すべてのITプロジェクトは「価値を生みつづける為に行われるべきである」ということです。<br>
-                                        一見当たり前のように聞こえますが、このことが忘れられて物事が進むのを目の当たりにすることが多いのです。
+                                      「ITで〇〇したい」という話は日常的によく聞きます。<br>
+                                      AI、IoT、ブロックチェーンなどなど...技術的なキーワードが一般に聞こえてくることもフツウになりました。<br><br>
+                                      ただし、「〇〇したい」と「〇〇を実際に活用している」が繋がる...「したいことがITで実現する」過程は一般に想像されているほど簡単なことではありません。<br><br>
+                                      <b>発想から実現までを確実に繋ぎこみ、「価値」を生み出すことがオフィスORAのミッションです</b><br><br>
+                                      オフィスORAは、このミッションを達成する努力を続けることであなたのお役に立てればといつも考えています！
                                     </p>
+
+                                    <span class="divider"></span>
+
                                     <p class="text-grey">
-                                        <b>「ビジネスとITプロジェクトの分断」...</b><br>
-                                        など、組織・企業内でのITプロジェクトの意味を改めて考えてみると、よくないパターンとして「6つの分断」にまとめられることが分かりました。<br>
-                                        （詳しくは<a href="assets/valuestream.pdf">こちらの資料をご覧ください</a>）<br><br>
-                                        価値を生みつづけられるITプロジェクトの在り方を追求しつつ、ITプロジェクトに関わり結果を出しつづける...オフィスORAはそんなサービスを顧客に提供したいと考えています。
+                                      【オフィスORAという名称の由来】<br>
+                                      Oracle Database Configuration Fileの拡張子「.ora」から命名しています。<br>
+                                      Oracle Databaseを使わなくなって久しいですが...
                                     </p>
                                 </div>
                                 <!-- //.col-md-12 -->
@@ -55,12 +59,7 @@
                                 <!-- //.col-md-5 -->
 
                                 <div class="col-sm-6 col-md-7">
-                                    <a href="assets/valuestream.pdf" class="btn btn-lg btn-custom">
-                                        <i class="icon-File-Download"></i> 「ITバリューストリーム<br>6つの分断」ダウンロード
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 col-md-7">
-                                    <a href="assets/resume.pdf" class="btn btn-lg btn-custom">
+                                    <a href="assets/resume_web.pdf" class="btn btn-lg btn-custom">
                                         <i class="icon-File-Download"></i> 業務履歴ダウンロード
                                     </a>
                                 </div>

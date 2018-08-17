@@ -5,11 +5,14 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h2 class="section-title uppercase">Contact Me</h2>
+                        <p class="section-subtitle">
+                          <img src="/assets/img/casek.png" class="hello-casek-img"> お気軽にどうぞ。待ってます！
+                        </p>
                     </div>
                     <!-- //.col-md-12 -->
                 </div>
                 <!-- //.row -->
-                
+
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
 
@@ -27,9 +30,9 @@
                                         <!-- //.input-group -->
                                     </div>
                                     <!-- //.form-group -->
-                                    
+
                                     <div class="form-group">
-                                        <label>サービス (オプション) :</label>
+                                        <label>問合せサービス (オプション) :</label>
 
                                         <div class="checkbox">
                                             <input type="checkbox" name="services" id="itconsulting" value="ITコンサルティング">
@@ -37,7 +40,7 @@
                                             <label for="itconsulting">ITコンサルティング</label>
                                         </div>
                                         <!-- //.checkbox -->
-                                        
+
                                         <div class="checkbox">
                                             <input type="checkbox" name="services" id="buildproject" value="プロジェクト構築">
 
@@ -58,26 +61,33 @@
                                             <label for="systemarchtect">システム設計</label>
                                         </div>
                                         <!-- //.checkbox -->
-                                        
+
                                         <div class="checkbox">
                                             <input type="checkbox" name="services" id="systemdev" value="システム開発">
 
                                             <label for="systemdev">システム開発</label>
                                         </div>
                                         <!-- //.checkbox -->
-                                        
+
                                         <div class="checkbox">
                                             <input type="checkbox" name="services" id="pmo" value="PMO">
 
                                             <label for="pmo">PMO</label>
                                         </div>
                                         <!-- //.checkbox -->
+
+                                        <div class="checkbox">
+                                            <input type="checkbox" name="services" id="spriteboxio" value="Spritebox.IO">
+
+                                            <label for="spriteboxio">オフィスORA独自サービス Spritebox.IO</label>
+                                        </div>
+                                        <!-- //.checkbox -->
                                     </div>
                                     <!-- //.form-group -->
-                                    
+
                                 </div>
                                 <!-- //.col-md-5 -->
-                                
+
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <div class="input-group input-group-lg">
@@ -86,7 +96,7 @@
                                         <!-- //.input-group -->
                                     </div>
                                     <!-- //.form-group -->
-                                    
+
                                     <div class="form-group">
                                         <div class="input-group input-group-lg">
                                             <select name="subject" id="subject" class="select2 required" style="width: 100%">
@@ -99,7 +109,7 @@
                                         <!-- //.input-group -->
                                     </div>
                                     <!-- //.form-group -->
-                                    
+
                                     <div class="form-group">
                                         <div class="input-group input-group-lg">
                                             <textarea name="message" id="message" class="form-control required" placeholder="メッセージ"></textarea>
@@ -115,7 +125,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <button id="submit" type="button" onclick="webappobj.contact();">コンタクト</button>
+                                        <button id="submit" class="btn btn-lg btn-custom" type="button" onclick="webappobj.contact();">送信</button>
                                     </div>
                                     <!-- //.form-group -->
                                 </div>

@@ -8,10 +8,13 @@
 
                         <span class="divider center"></span>
                     </div>
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                      <a href="assets/resume_web.pdf" class="btn btn-custom"><i class="icon-File-Download"></i> 業務履歴はこちらです</a>
+                    </div>
                     <!-- //.col-md-8 -->
                 </div>
                 <!-- //.row -->
-                
+
                 <!-- WORK EXPERIENCE START -->
                 <div class="row work-experience">
                     <div class="col-md-10 col-md-offset-1">
@@ -169,7 +172,7 @@
                     <!-- //.col-md-10 -->
                 </div>
                 <!-- //WORK EXPERIENCE END -->
-                
+
                 <!-- EDUCATION START -->
                 <div class="row education">
                     <div class="col-md-10 col-md-offset-1">

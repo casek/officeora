@@ -78,3 +78,87 @@
 .red {
   color: #f00;
 }
+
+.hello-casek-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 64px;
+  margin-right: 12px;
+}
+
+header .general-title {
+  padding-top: 12px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  header {
+    display: none;
+  }
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+   background-color: #00a69a;
+   color: #fff;
+}
+
+#contents {
+  padding: 12px 48px 60px 48px;
+}
+
+#contents h1 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+#services .item {
+  height: 300px;
+}
+#tech .item {
+  height: 300px;
+  font-size: 12px;
+}
+
+#contact form {
+  background-color: #fff;
+  padding: 21px;
+}
+#contact .contact-form .form-group .input-group input {
+  color: #000;
+}
+#contact .contact-form .form-group label {
+  color: #000;
+}
+.select2-dropdown-custom {
+  background-color: #fff;
+}
+.select2-dropdown-custom .select2-results > .select2-results__options > .select2-results__option {
+  color: #000;
+}
+.select2-dropdown-custom .select2-results > .select2-results__options > .select2-results__option--highlighted[aria-selected] {
+  color: #fff;
+}
+.select2-container--default .select2-selection--single.select2-container-custom {
+  background-color: #fff;
+  color: #000;
+}
+.select2-container--default .select2-selection--single.select2-container-custom .select2-selection__rendered {
+  color: #000;
+}
+#contact .contact-form .form-group .input-group textarea {
+  color: #000;
+}
+#contact .contact-form .form-group button {
+  background-color: #00a69a;
+  color: #000;
+}
+
+.spritebox h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  padding: 0.2em;
+  background: linear-gradient(transparent 80%, #00a69a 80%);
+}

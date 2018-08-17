@@ -1,0 +1,76 @@
+<div id="contents" class="spritebox">
+  <h2>オフィスORAの新サービス Spritebox.IO</h2>
+  <p>
+    <a href="https://spritebox.io" target="_blank"><img src="/assets/img/spritebox/spritebox.png" width="600" style="margin: 12px 0px;"></a>
+    <br>
+    <a href="https://spritebox.io" target="_blank">Spritebox.IO</a>は、CSS Sprite手法をWebサイト・Webアプリ・スマホアプリなどで利用するためのオンラインサービスです。
+  </p>
+  <p>
+    無料でも利用できますので、まずはお気軽にお試しください。
+    本格的に利用されたい場合は<a href="https://spritebox.io/aboutWebCreator" target="_blank">有料プランをサブスクライブ</a>し、Spritebox.IOの機能を十分に活用してみてください。
+  </p>
+  <ul>
+    <li><a href="/spritebox#merit">CSS Sprite手法を導入するメリット</a></li>
+    <li><a href="/spritebox#sp-merit">Spritebox.IOを利用するメリット</a></li>
+  </ul>
+
+  <h2 id="merit">CSS Sprite手法を導入するメリット</h2>
+  <p>
+    CSS Sprite（CSSスプライト）手法とは、以下のように複数の画像を1つの画像にまとめた画像を用意し（この例では3枚の画像を縦にならべて1枚の画像にしています）、CSSのbackgoundプロパティを利用することでまとめた大きな画像から対象画像のみを表示する。。というHTML＋CSS手法です。
+    <br>
+    <img src="/assets/img/spritebox/sphome.jpg" width="168" height="300" style="margin-top: 12px;">
+  </p>
+  <p>
+    これを使うことで以下のようなメリットがあります。
+  </p>
+  <ul>
+    <li>Webサーバーへの負担を軽減できる</li>
+    <li>サイト（Webアプリなど含む）の最適化・高速化が実現できる</li>
+  </ul>
+  <p>
+    以下の例を見てみてください。
+    <br>
+    <img src="/assets/img/spritebox/general-html.png" width="768" height="111" style="margin: 12px 0;">
+    <br>
+    これはSpritebox.IOのトップページのページロード時にロードされる画像の一覧です。<br>
+    6個の画像がロードされるので、Webサーバーには6回のリクエストが送信され、6回のレスポンスがあったことを示しています。<br>
+    データの転送量は、全部で1204.8Kバイトとなっています。
+    <br>
+    <img src="/assets/img/spritebox/sp-html.png" width="768" height="82" style="margin: 12px 0;">
+    <br>
+    これは同様のページの一部の画像にCSS Sprite手法を適用した場合の一覧です。<br>
+    home1.jpg / home2.jpg / home3.jpgをsphome.jpgというCSS Sprite画像にまとめました。<br>
+    このことで元々6回のリクエストをWebサーバーに送り6回のレスポンスを受けていたページが4回のリクエスト・4回のレスポンスで済むようになりました。<br>
+    データ転送量も、1204.8Kバイトだったのが445.8Kバイトに削減できました。<br>
+    1ページのロードでリクエスト数を約65%に、転送量を約37％にできたわけです。<br>
+    Webサーバーに対する負担がかなり減らすことができることがご理解いただけると思います。<br>
+    データ転送量に課金されるAWS EC2などでサーバーを運用している場合、ランニングコストに大きくヒットするケースがありますので、是非CSS Sprite手法の導入を検討していみてはいかがでしょうか？<br>
+    導入時には<a href="https://spritebox.io" target="_blank">Spritebox.IO</a>が大きくあなたをお助けできると思います。
+  </p>
+  <h2 id="sp-merit">Spritebox.IOを利用するメリット</h2>
+  <p>
+    CSS Sprite手法のメリットをご理解いただいたところで、その導入にSpritebox.IOが如何に便利かをご説明したいと思います。<br>
+    一般にCSS Sprite手法を導入するには以下の手順を踏まなければなりません。
+  </p>
+  <ul>
+    <li>まとめる画像を選ぶ（Webサイトであれば多くの場合、1ページ単位で1CSS Sprite画像となるようにまとめます）</li>
+    <li>各CSS Sprite画像を作る（Photoshopなどで複数画像を1画像にまとめる）</li>
+    <li>各CSS Sprite画像をサイト上で使うためのCSSファイルをそれぞれ作る（CSS3の知識が必要）</li>
+    <li>各ページのHTMLにCSS Sprite画像を埋め込む</li>
+  </ul>
+  <p>
+    そして、ページの更新や変更時には、、、
+  </p>
+  <ul>
+    <li>該当ページのCSS Sprite画像を編集する（Photoshopなどで編集）</li>
+    <li>該当ページのCSSファイルを編集する</li>
+    <li>該当ページのHTMLファイルを編集する</li>
+  </ul>
+  <p>
+    という作業が必要になります。<br>
+    この作業の単調さや大変さでCSS Sprite画像の導入に二の足を踏んでこられた方も多いのではないでしょうか？<br>
+    しかし、Spritebox.IOでは、上記手順リストの青文字の項目をSpritebox.IO上での簡単なマウス操作のみの作業に置き換えることができます。<br>
+    1つのWebサイトでも、CSS Sprite手法を導入する作業には多くの人手（コスト）がかかります。<br>
+    これを軽減できる、、、それがSpritebox.IOを利用するメリットです。
+  </p>
+</div>
