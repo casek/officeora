@@ -111,6 +111,18 @@ class Controller_Base extends Controller_Template
             'desc'      => Config::get('app.description'),
             'keywords'  => Config::get('app.keywords'),
             'token_name'=> Config::get('security.csrf_token_key'),
+            'ogp'       => array(
+              'url' => Config::get('base_url'),
+              'title' => Config::get('app.title_base'),
+              'type' => 'website',
+              'description' => Config::get('app.description'),
+              'image' => Config::get('base_url').'assets/img/orasite.png',
+              'name' => Config::get('app.title_base'),
+              'locale' => 'ja_JP',
+              'twitter_card' => 'summary',
+              'twitter_site' => '@officeora',
+              'fb_appid' => "318069015433860",
+            )
         );
         $this->template->assets = array(
             'js'        => array(

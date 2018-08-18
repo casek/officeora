@@ -25,15 +25,27 @@ class Controller_Spritebox extends Controller_Base
   protected function htmlheader() {
       $this->template->basicinfo = array(
           'lang'      => Config::get('language'),
-          'title'     => Config::get('app.title_base'),
+          'title'     => "Spritebox.IO - ".Config::get('app.title_base'),
           'baseurl'   => Config::get('base_url'),
-          'canonical' => Config::get('base_url'),
+          'canonical' => Config::get('base_url')."spritebox/",
           'app_name'  => Config::get('app.app_name'),
           'author'    => Config::get('app.author'),
           'generator' => "SSBS for FuelPHP",
-          'desc'      => Config::get('app.description'),
-          'keywords'  => Config::get('app.keywords'),
+          'desc'      => "Office ORAが運営するオンラインサービスSpritebox.IOの概要のご説明",
+          'keywords'  => "Spritebox.IO, CSS, CSS Sprite, Image, Picture, 画像, Office ORA",
           'token_name'=> Config::get('security.csrf_token_key'),
+          'ogp'       => array(
+            'url' => Config::get('base_url')."spritebox/",
+            'title' => "Spritebox.IO - ".Config::get('app.title_base'),
+            'type' => 'website',
+            'description' => "Office ORAが運営するオンラインサービスSpritebox.IOの概要のご説明",
+            'image' => Config::get('base_url').'assets/img/spritebox/spritebox.png',
+            'name' => "Spritebox.IO - ".Config::get('app.title_base'),
+            'locale' => 'ja_JP',
+            'twitter_card' => 'summary',
+            'twitter_site' => '@officeora',
+            'fb_appid' => "318069015433860",
+          )
       );
       $this->template->assets = array(
           'js'        => array(

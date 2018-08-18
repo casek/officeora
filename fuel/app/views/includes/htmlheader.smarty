@@ -28,6 +28,22 @@
 <!--[if lt IE 8]>
     <script src="assets/plugins/modernizr.min.js"></script>
 <![endif]-->
+
+{if $basicinfo.ogp.url }
+    <meta property="og:url" content="{$basicinfo.ogp.url|escape}" />
+    <meta property="og:title" content="{$basicinfo.ogp.title|escape}" />
+    <meta property="og:type" content="{$basicinfo.ogp.type|escape}">
+    <meta property="og:description" content="{$basicinfo.ogp.description|escape}" />
+    <meta property="og:image" content="{$basicinfo.ogp.image|escape}" />
+    <meta property="og:site_name" content="{$basicinfo.ogp.title|escape}" />
+    <meta property="og:locale" content="{$basicinfo.ogp.locale|escape}" />
+    <meta name="twitter:card" content="{$basicinfo.ogp.twitter_card|escape}" />
+{if $basicinfo.ogp.twitter_site!=''}
+    <meta name="twitter:site" content="{$basicinfo.ogp.twitter_site|escape}" />
+{/if}
+    <meta property="fb:app_id" content="{$basicinfo.ogp.fb_appid|escape}" />
+{/if}
+
 <script type="text/javascript">
     $(document).ready(function() {
         webappobj.init();
@@ -38,4 +54,3 @@
 <!--[if lt IE 7]>
      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-
