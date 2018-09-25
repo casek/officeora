@@ -47,9 +47,9 @@
                         <a href="#contact">Contact</a>
                     </li>
 
-                    <!--li>
+                    <li>
                         <a href="/spritebox"><span class="label label-danger">New Service</span> Spritebox.IO</a>
-                    </li-->
+                    </li>
                 </ul>
             </div>
             <!-- //.navbar-collapse -->

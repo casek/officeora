@@ -123,7 +123,7 @@
                     </div>
                     <!-- //.row -->
 
-                    <!--div class="row">
+                    <div class="row">
                         <div class="col-sm-12 col-md-12 item dark-bg">
                             <div class="inner-content">
                                 <a href="https://spritebox.io" target="_blank"><img src="/assets/img/logo_c.png" width='46' height='46'></a>
@@ -137,7 +137,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div-->
+                    </div>
                     <!-- //.row -->
                 </div>
                 <!-- //SERVICES END -->
