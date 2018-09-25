@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="{$basicinfo.lang|escape}">
 <head>
+{literal}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66172342-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-66172342-7');
+    </script>
+{/literal}
+
     <meta charset="utf-8" />
     <title>{$basicinfo.title|escape}</title>
     <base href="{$basicinfo.baseurl|escape}" />
