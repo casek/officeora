@@ -162,3 +162,16 @@ header .general-title {
   padding: 0.2em;
   background: linear-gradient(transparent 80%, #00a69a 80%);
 }
+
+@media (max-width: 768px) {
+  .spritebox .spimg {
+    width: 100%;
+    margin: 12px 0px;
+  }
+}
+@media (min-width: 768px) {
+  .spritebox .spimg {
+    width: 600px;
+    margin: 12px 0px;
+  }
+}

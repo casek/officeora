@@ -1,7 +1,7 @@
 <div id="contents" class="spritebox">
   <h2>オフィスORAの新サービス Spritebox.IO</h2>
   <p>
-    <a href="https://spritebox.io" target="_blank"><img src="/assets/img/spritebox/spritebox.png" width="600" style="margin: 12px 0px;"></a>
+    <a href="https://spritebox.io" target="_blank"><img src="/assets/img/spritebox/spritebox.png" class="spimg"></a>
     <br>
     <a href="https://spritebox.io" target="_blank">Spritebox.IO</a>は、CSS Sprite手法をWebサイト・Webアプリ・スマホアプリなどで利用するためのオンラインサービスです。
   </p>
@@ -30,13 +30,13 @@
   <p>
     以下の例を見てみてください。
     <br>
-    <img src="/assets/img/spritebox/general-html.png" width="768" height="111" style="margin: 12px 0;">
+    <img src="/assets/img/spritebox/general-html.png" class="spimg">
     <br>
     これはSpritebox.IOのトップページのページロード時にロードされる画像の一覧です。<br>
     6個の画像がロードされるので、Webサーバーには6回のリクエストが送信され、6回のレスポンスがあったことを示しています。<br>
     データの転送量は、全部で1204.8Kバイトとなっています。
     <br>
-    <img src="/assets/img/spritebox/sp-html.png" width="768" height="82" style="margin: 12px 0;">
+    <img src="/assets/img/spritebox/sp-html.png" class="spimg">
     <br>
     これは同様のページの一部の画像にCSS Sprite手法を適用した場合の一覧です。<br>
     home1.jpg / home2.jpg / home3.jpgをsphome.jpgというCSS Sprite画像にまとめました。<br>
