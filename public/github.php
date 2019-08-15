@@ -1,4 +1,5 @@
 <?php
+$githubToken = "token";
 
 function createOptions($info) {
 	return array(
@@ -36,7 +37,7 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 	$options = array(
 		CURLOPT_URL => $payload["project_card"]['url'],
 		CURLOPT_HTTPHEADER => array(
-			'Authorization: token 001e97c0cdd82ebe1bb6ae3cd11a407270e020fe',
+			'Authorization: token '.$githubToken,
 			'Accept: application/vnd.github.inertia-preview+json',
 			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
 		),
@@ -50,7 +51,7 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 	$options = array(
 		CURLOPT_URL => $payload["project_card"]['project_url'],
 		CURLOPT_HTTPHEADER => array(
-			'Authorization: token 001e97c0cdd82ebe1bb6ae3cd11a407270e020fe',
+			'Authorization: token '.$githubToken,
 			'Accept: application/vnd.github.inertia-preview+json',
 			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
 		),
@@ -64,7 +65,7 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 	$options = array(
 		CURLOPT_URL => $payload["project_card"]['column_url'],
 		CURLOPT_HTTPHEADER => array(
-			'Authorization: token 001e97c0cdd82ebe1bb6ae3cd11a407270e020fe',
+			'Authorization: token '.$githubToken,
 			'Accept: application/vnd.github.inertia-preview+json',
 			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
 		),
