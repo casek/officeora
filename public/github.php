@@ -1,5 +1,7 @@
 <?php
 $githubToken = "token";
+$slackWebhookUrl = "webhookurl";
+$slackChannel = "#channel";
 
 function createOptions($info) {
 	return array(
@@ -157,10 +159,10 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 
 if($contents) {
 	$info = array(
-		'url'  => "https://hooks.slack.com/services/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",
+		'url'  => $slackWebhookUrl,
 		'body' => array(
 	   	'payload' => json_encode(array(
-      	'channel'    => "#say_something",
+      	'channel'    => $slackChannel;
       	'username'   => "github project",
       	'icon_emoji' => ":thumbsup:",
       	'text'       => $contents,
@@ -168,6 +170,6 @@ if($contents) {
 	  ),
 	);
 	request(createOptions($info));
-	file_put_contents("../gege.txt", $contents."\n", FILE_APPEND | LOCK_EX);
+	//file_put_contents("../gege.txt", $contents."\n", FILE_APPEND | LOCK_EX);
 }
 ?>
