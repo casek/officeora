@@ -111,8 +111,10 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Note>が編集されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";
 		break;
 	case 'moved':
-		$action = "カラム移動されました";
-		$contents = "project [<".$projectUrl."|".$projectName.">]の以下の<".$noteUrl."|Note>が移動されました\n======\n".$noteBody."\n------\n".$changes."→".$columnName."\n------\n編集者: <".$creatorUrl."|".$creator.">";
+		if($changes!=$columnName) {
+			$action = "カラム移動されました";
+			$contents = "project [<".$projectUrl."|".$projectName.">]の以下の<".$noteUrl."|Note>が移動されました\n======\n".$noteBody."\n------\n".$change."→".$columnName."\n------\n編集者: <".$creatorUrl."|".$creator.">";
+		}
 		break;
 	case 'converted':
 		$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Note>がissue化されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";
@@ -129,7 +131,7 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 }
 
 
-file_put_contents("../gege.txt", $contents, FILE_APPEND | LOCK_EX)
+file_put_contents("../gege.txt", $contents."\n", FILE_APPEND | LOCK_EX)
 
 
 /*
