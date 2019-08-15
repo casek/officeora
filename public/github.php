@@ -162,7 +162,7 @@ if($contents) {
 		'url'  => $slackWebhookUrl,
 		'body' => array(
 	   	'payload' => json_encode(array(
-      	'channel'    => $slackChannel;
+      	'channel'    => $slackChannel,
       	'username'   => "github project",
       	'icon_emoji' => ":thumbsup:",
       	'text'       => $contents,
