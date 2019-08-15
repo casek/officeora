@@ -46,12 +46,30 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		CURLOPT_HEADER => true
 	);
 	$res = request($options);
-	if(mb_strlen($res['note'])>20) {
-		$noteBody = mb_substr($res['note'],0,20)."...";
-	} else {
-		$noteBody = $res['note'];
+	if(isset($res['contents_url'])) { // issue
+		$options = array(
+			CURLOPT_URL => $res['contents_url'],
+			CURLOPT_HTTPHEADER => array(
+				'Authorization: token '.$githubToken,
+				'Accept: application/vnd.github.inertia-preview+json',
+				'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
+			),
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_HEADER => true
+		);
+		$res = request($options);
+		$noteBody = $res['title'];
+		$noteUrl = $res['url'];
+		$isNote = false;
+	} else { // note
+		if(mb_strlen($res['note'])>20) {
+			$noteBody = mb_substr($res['note'],0,20)."...";
+		} else {
+			$noteBody = $res['note'];
+		}
+		$noteUrl = $res['url'];
+		$isNote = true;
 	}
-	$noteUrl = $res['url'];
 
 	// get projects info
 	$options = array(
@@ -115,15 +133,22 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		break;
 	case 'moved':
 		if($change!="") {
-			$action = "カラム移動されました";
-			$contents = "project [<".$projectUrl."|".$projectName.">]の以下の<".$noteUrl."|Note>が移動されました\n======\n".$noteBody."\n------\n".$change."→".$columnName."\n------\n編集者: <".$creatorUrl."|".$creator.">";
+			if($isNote) {
+				$contents = "project [<".$projectUrl."|".$projectName.">]の以下の<".$noteUrl."|Note>が移動されました\n======\n".$noteBody."\n------\n".$change."→".$columnName."\n------\n編集者: <".$creatorUrl."|".$creator.">";
+			} else {
+				$contents = "project [<".$projectUrl."|".$projectName.">]の以下の<".$noteUrl."|Issue>が移動されました\n======\n".$noteBody."\n------\n".$change."→".$columnName."\n------\n編集者: <".$creatorUrl."|".$creator.">";
+			}
 		}
 		break;
 	case 'converted':
 		$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Note>がissue化されました\n======\n".$change."\n------\n編集者: <".$creatorUrl."|".$creator.">";
 		break;
 	case 'deleted':
-		$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Note>が削除されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";
+		if($isNote) {
+			$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Note>が削除されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";
+		} else {
+			$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Issue>が削除されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";			
+		}
 		break;
 	}
 } else {
@@ -135,17 +160,14 @@ if($contents) {
 		'url'  => "https://hooks.slack.com/services/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",
 		'body' => array(
 	   	'payload' => json_encode(array(
-	          	'channel'    => "#say_something",
-	          	'username'   => "github project",
-	          	'icon_emoji' => ":thumbsup:",
-	          	'text'       => $contents,
+      	'channel'    => "#say_something",
+      	'username'   => "github project",
+      	'icon_emoji' => ":thumbsup:",
+      	'text'       => $contents,
 	    )),
 	  ),
 	);
 	request(createOptions($info));
-	file_put_contents("../gege.txt", $contents."\n", FILE_APPEND | LOCK_EX)
+	file_put_contents("../gege.txt", $contents."\n", FILE_APPEND | LOCK_EX);
 }
-
-/*
-*/
 ?>
