@@ -108,16 +108,17 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		$contents = "project [<".$projectUrl."|".$projectName.">]に以下の<".$noteUrl."|Note>が作成されました\n======\n".$noteBody."\n------\n作成者: <".$creatorUrl."|".$creator.">";
 		break;
 	case 'edited':
-		$contents = "project [<".$projectUrl."|".$projectName.">]の以下の<".$noteUrl."|Note>が編集されました\n======\n".$noteBody."\n------\n作成者: <".$creatorUrl."|".$creator.">";
+		$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Note>が編集されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";
 		break;
 	case 'moved':
 		$action = "カラム移動されました";
+		$contents = "project [<".$projectUrl."|".$projectName.">]の以下の<".$noteUrl."|Note>が移動されました\n======\n".$noteBody."\n------\n".$changes."→".$columnName."\n------\n編集者: <".$creatorUrl."|".$creator.">";
 		break;
 	case 'converted':
-		$action = "issue化されました";
+		$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Note>がissue化されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";
 		break;
 	case 'deleted':
-		$action = "削除されました";
+		$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Note>が削除されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";
 		break;
 	}
 
@@ -128,7 +129,7 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 }
 
 
-file_put_contents("../gege.txt", $data, FILE_APPEND | LOCK_EX)
+file_put_contents("../gege.txt", $contents, FILE_APPEND | LOCK_EX)
 
 
 /*
