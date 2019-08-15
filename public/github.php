@@ -14,6 +14,9 @@ function request($options) {
 	$ch = curl_init();
   curl_setopt_array($ch, $options);
   $result = curl_exec($ch);
+	$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+	$header      = substr($result, 0, $header_size);
+	$result      = substr($result, $header_size);
   curl_close($ch);
 
   return json_decode($result,true);
@@ -33,16 +36,43 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 	$options = array(
 		CURLOPT_URL => $payload["project_card"]['url'],
 		CURLOPT_HTTPHEADER => array(
-			'Acccept: application/vnd.github.inertia-preview+json'
-		)
+			'Authorization: token 73e00224231f4547e85b94321ef7c0aa9997b039',
+			'Acccept: application/vnd.github.inertia-preview+json',
+			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
+		),
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_HEADER => true,
 	);
 	$res = request($options);
-	$data = "================\n".$payload["project_card"]['url']."\n".print_r($res, true)."\n";
-
+	$data = "= CARD ==============\n".print_r($res, true)."\n";
 
 	// get projects info
+	$options = array(
+		CURLOPT_URL => $payload["project_card"]['project_url'],
+		CURLOPT_HTTPHEADER => array(
+			'Authorization: token 73e00224231f4547e85b94321ef7c0aa9997b039',
+			'Acccept: application/vnd.github.inertia-preview+json',
+			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
+		),
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_HEADER => true,
+	);
+	$res = request($options);
+	$data = "= PROJCT ============\n".print_r($res, true)."\n";
 
 	// get columns info
+	$options = array(
+		CURLOPT_URL => $payload["project_card"]['column_url'],
+		CURLOPT_HTTPHEADER => array(
+			'Authorization: token 73e00224231f4547e85b94321ef7c0aa9997b039',
+			'Acccept: application/vnd.github.inertia-preview+json',
+			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
+		),
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_HEADER => true,
+	);
+	$res = request($options);
+	$data = "= COLUMN ============\n".print_r($res, true)."\n";
 
 	// changes info
 
