@@ -46,9 +46,9 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		CURLOPT_HEADER => true
 	);
 	$res = request($options);
-	if(isset($res['contents_url'])) { // issue
+	if(isset($res['content_url'])) { // issue
 		$options = array(
-			CURLOPT_URL => $res['contents_url'],
+			CURLOPT_URL => $res['content_url'],
 			CURLOPT_HTTPHEADER => array(
 				'Authorization: token '.$githubToken,
 				'Accept: application/vnd.github.inertia-preview+json',
@@ -147,7 +147,7 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		if($isNote) {
 			$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Note>が削除されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";
 		} else {
-			$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Issue>が削除されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";			
+			$contents = "project [<".$projectUrl."|".$projectName.">]のカラム[".$columnName."]の以下の<".$noteUrl."|Issue>が削除されました\n======\n".$noteBody."\n------\n編集者: <".$creatorUrl."|".$creator.">";
 		}
 		break;
 	}
