@@ -37,7 +37,7 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		)
 	);
 	$res = request($options);
-	$data = "================\n".print_r($res, true)."\n";
+	$data = "================\n".$payload["project_card"]['url']."\n".print_r($res, true)."\n";
 
 
 	// get projects info
