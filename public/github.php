@@ -30,8 +30,8 @@ $hmac = hash_hmac('sha1', $rowdata, "bringyourbrain");
 if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='.$hmac ) {
 	$payload = json_decode($rowdata, true);
 	//$data = "================\n".print_r($payload, true)."\n";
-
-	// acction
+	$creator = $payload['project_card']['creator']['login'];
+	$creatorUrl = $payload['project_card']['creator']['url'];
 
 	// get card info
 	$options = array(
@@ -45,7 +45,12 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		CURLOPT_HEADER => true
 	);
 	$res = request($options);
-	$data = "= CARD ==============\n".print_r($res, true)."\n";
+	if(mb_strlen($res['note'])>20) {
+		$noteBody = mb_substr($res['note'],0,20);
+	} else {
+		$noteBody = $res['note'];
+	}
+	$noteUrl = $res['url'];
 
 	// get projects info
 	$options = array(
@@ -59,7 +64,8 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		CURLOPT_HEADER => true
 	);
 	$res = request($options);
-	$data .= "= PROJCT ============\n".print_r($res, true)."\n";
+	$projectName = $res['name'];
+	$projectUrl = $res['url'];
 
 	// get columns info
 	$options = array(
@@ -73,9 +79,48 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		CURLOPT_HEADER => true
 	);
 	$res = request($options);
-	$data .= "= COLUMN ============\n".print_r($res, true)."\n";
+	$columnName = $res['name'];
 
 	// changes info
+	//  moved : column_id from
+	//  edited : note from
+	if($payload['action']=='moved') {
+		$options = array(
+			CURLOPT_URL => "https://api.github.com/projects/columns/".$payload["changes"]['column_id']['from'],
+			CURLOPT_HTTPHEADER => array(
+				'Authorization: token '.$githubToken,
+				'Accept: application/vnd.github.inertia-preview+json',
+				'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
+			),
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_HEADER => true
+		);
+		$res = request($options);
+		$change = $res['name'];
+	} else if($payload['action']=='edited') {
+		$change = $payload['changes']['note']['from'];
+	}
+
+	// acction
+	$contents = "";
+	switch($payload['action']) {
+	case 'created':
+		$contents = "project [<".$projectUrl."|".$projectName.">]に以下の<".$noteUrl."|Note>が作成されました\n======\n".$noteBody."\n------\n作成者: <".$creatorUrl."|".$creator.">";
+		break;
+	case 'edited':
+		$contents = "project [<".$projectUrl."|".$projectName.">]の以下の<".$noteUrl."|Note>が編集されました\n======\n".$noteBody."\n------\n作成者: <".$creatorUrl."|".$creator.">";
+		break;
+	case 'moved':
+		$action = "カラム移動されました";
+		break;
+	case 'converted':
+		$action = "issue化されました";
+		break;
+	case 'deleted':
+		$action = "削除されました";
+		break;
+	}
+
 
 
 } else {
