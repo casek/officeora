@@ -36,12 +36,12 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 	$options = array(
 		CURLOPT_URL => $payload["project_card"]['url'],
 		CURLOPT_HTTPHEADER => array(
-			'Authorization: token 73e00224231f4547e85b94321ef7c0aa9997b039',
-			'Acccept: application/vnd.github.inertia-preview+json',
+			'Authorization: token e41405041da43b5dd7d2f368bd35f4663ff99abe',
+			'Accept: application/vnd.github.inertia-preview+json',
 			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
 		),
 		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_HEADER => true,
+		CURLOPT_HEADER => true
 	);
 	$res = request($options);
 	$data = "= CARD ==============\n".print_r($res, true)."\n";
@@ -50,12 +50,12 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 	$options = array(
 		CURLOPT_URL => $payload["project_card"]['project_url'],
 		CURLOPT_HTTPHEADER => array(
-			'Authorization: token 73e00224231f4547e85b94321ef7c0aa9997b039',
-			'Acccept: application/vnd.github.inertia-preview+json',
+			'Authorization: token e41405041da43b5dd7d2f368bd35f4663ff99abe',
+			'Accept: application/vnd.github.inertia-preview+json',
 			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
 		),
 		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_HEADER => true,
+		CURLOPT_HEADER => true
 	);
 	$res = request($options);
 	$data = "= PROJCT ============\n".print_r($res, true)."\n";
@@ -64,12 +64,12 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 	$options = array(
 		CURLOPT_URL => $payload["project_card"]['column_url'],
 		CURLOPT_HTTPHEADER => array(
-			'Authorization: token 73e00224231f4547e85b94321ef7c0aa9997b039',
-			'Acccept: application/vnd.github.inertia-preview+json',
+			'Authorization: token e41405041da43b5dd7d2f368bd35f4663ff99abe',
+			'Accept: application/vnd.github.inertia-preview+json',
 			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
 		),
 		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_HEADER => true,
+		CURLOPT_HEADER => true
 	);
 	$res = request($options);
 	$data = "= COLUMN ============\n".print_r($res, true)."\n";
