@@ -18,6 +18,7 @@ function createSlackPostOptions($info) {
 }
 
 function createGitHubGetOptions($url) {
+	global $githubToken;
 	return array(
 		CURLOPT_URL => $url,
 		CURLOPT_HTTPHEADER => array(
@@ -31,6 +32,8 @@ function createGitHubGetOptions($url) {
 }
 
 function request($options) {
+	global $debug;
+
 	$ch = curl_init();
   curl_setopt_array($ch, $options);
   $result = curl_exec($ch);
