@@ -43,10 +43,10 @@ function request($options) {
   curl_close($ch);
 	if($debug!="") {
 		$data = "==============\n";
-		$data .= $options['CURLOPT_URL']."\n";
-		$data .= "  ------------\n";
+		$data .= $options[CURLOPT_URL]."\n";
+		$data .= "--------------\n";
 		$data .= $header."\n";
-		$data .= "  ------------\n";
+		$data .= "--------------\n";
 		$data .= print_r(json_decode($result,true),true)."\n";
 		file_put_contents($debug, $data, FILE_APPEND | LOCK_EX);
 	}
@@ -61,7 +61,10 @@ $hmac = hash_hmac('sha1', $rowdata, $githubSecret);
 $contents = "";
 if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='.$hmac ) {
 	$payload = json_decode($rowdata, true);
-	//$data = "================\n".print_r($payload, true)."\n";
+	if($debug!="") {
+		$data = "==============\n".print_r($payload, true)."\n";
+		file_put_contents($debug, $data, FILE_APPEND | LOCK_EX);
+	}
 	$creator = $payload['project_card']['creator']['login'];
 	$creatorUrl = $payload['project_card']['creator']['url'];
 
@@ -156,7 +159,7 @@ if($contents) {
 	request(createSlackPostOptions($info));
 
 	if($debug!="") {
-		file_put_contents($debug, $contents."\n", FILE_APPEND | LOCK_EX);
+		//file_put_contents($debug, $contents."\n", FILE_APPEND | LOCK_EX);
 	}
 }
 ?>
