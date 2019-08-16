@@ -1,5 +1,6 @@
 <?php
 $githubToken = "token";
+$githubSecret = "";
 $slackWebhookUrl = "webhookurl";
 $slackChannel = "#channel";
 $organizationId = "";
@@ -53,7 +54,7 @@ function request($options) {
 
 $header = getallheaders();
 $rowdata = file_get_contents("php://input");
-$hmac = hash_hmac('sha1', $rowdata, "bringyourbrain");
+$hmac = hash_hmac('sha1', $rowdata, $githubSecret);
 $contents = "";
 if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='.$hmac ) {
 	$payload = json_decode($rowdata, true);
