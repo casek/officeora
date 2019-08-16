@@ -2,14 +2,30 @@
 $githubToken = "token";
 $slackWebhookUrl = "webhookurl";
 $slackChannel = "#channel";
+$organizationId = "";
+$projectId = "";
+$debug = "";
 
-function createOptions($info) {
+function createSlackPostOptions($info) {
 	return array(
 		CURLOPT_URL            => $info['url'],
   	CURLOPT_POST           => true,
   	CURLOPT_POSTFIELDS     => $info['body'],
   	CURLOPT_RETURNTRANSFER => true,
   	CURLOPT_HEADER         => true,
+	);
+}
+
+function createGitHubGetOptions($url) {
+	return array(
+		CURLOPT_URL => $url,
+		CURLOPT_HTTPHEADER => array(
+			'Authorization: token '.$githubToken,
+			'Accept: application/vnd.github.inertia-preview+json',
+			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
+		),
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_HEADER => true
 	);
 }
 
@@ -21,6 +37,15 @@ function request($options) {
 	$header      = substr($result, 0, $header_size);
 	$result      = substr($result, $header_size);
   curl_close($ch);
+	if($debug!="") {
+		$data = "==============\n";
+		$data .= $options['CURLOPT_URL']."\n";
+		$data .= "  ------------\n";
+		$data .= $header."\n";
+		$data .= "  ------------\n";
+		$data .= print_r(json_decode($result,true),true)."\n";
+		file_put_contents($debug, $data, FILE_APPEND | LOCK_EX);
+	}
 
   return json_decode($result,true);
 }
@@ -37,28 +62,10 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 	$creatorUrl = $payload['project_card']['creator']['url'];
 
 	// get card info
-	$options = array(
-		CURLOPT_URL => $payload["project_card"]['url'],
-		CURLOPT_HTTPHEADER => array(
-			'Authorization: token '.$githubToken,
-			'Accept: application/vnd.github.inertia-preview+json',
-			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
-		),
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_HEADER => true
-	);
+	$options = createGitHubGetOptions($payload["project_card"]['url']);
 	$res = request($options);
 	if(isset($res['content_url'])) { // issue
-		$options = array(
-			CURLOPT_URL => $res['content_url'],
-			CURLOPT_HTTPHEADER => array(
-				'Authorization: token '.$githubToken,
-				'Accept: application/vnd.github.inertia-preview+json',
-				'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
-			),
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_HEADER => true
-		);
+		$options = createGitHubGetOptions($res['content_url']);
 		$res = request($options);
 		$noteBody = $res['title'];
 		$noteUrl = $res['url'];
@@ -74,31 +81,13 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 	}
 
 	// get projects info
-	$options = array(
-		CURLOPT_URL => $payload["project_card"]['project_url'],
-		CURLOPT_HTTPHEADER => array(
-			'Authorization: token '.$githubToken,
-			'Accept: application/vnd.github.inertia-preview+json',
-			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
-		),
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_HEADER => true
-	);
+	$options = createGitHubGetOptions($payload["project_card"]['project_url']);
 	$res = request($options);
 	$projectName = $res['name'];
 	$projectUrl = $res['url'];
 
 	// get columns info
-	$options = array(
-		CURLOPT_URL => $payload["project_card"]['column_url'],
-		CURLOPT_HTTPHEADER => array(
-			'Authorization: token '.$githubToken,
-			'Accept: application/vnd.github.inertia-preview+json',
-			'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
-		),
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_HEADER => true
-	);
+	$options = createGitHubGetOptions($payload["project_card"]['column_url']);
 	$res = request($options);
 	$columnName = $res['name'];
 
@@ -106,16 +95,7 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 	//  moved : column_id from
 	//  edited : note from
 	if($payload['action']=='moved') {
-		$options = array(
-			CURLOPT_URL => "https://api.github.com/projects/columns/".$payload["changes"]['column_id']['from'],
-			CURLOPT_HTTPHEADER => array(
-				'Authorization: token '.$githubToken,
-				'Accept: application/vnd.github.inertia-preview+json',
-				'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:26.0) Gecko/20100101 Firefox/26.0'
-			),
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_HEADER => true
-		);
+		$options = createGitHubGetOptions("https://api.github.com/projects/columns/".$payload["changes"]['column_id']['from']);
 		$res = request($options);
 		$change = $res['name'];
 	} else if($payload['action']=='edited' || $payload['action']=='converted') {
@@ -169,7 +149,10 @@ if($contents) {
 	    )),
 	  ),
 	);
-	request(createOptions($info));
-	//file_put_contents("../gege.txt", $contents."\n", FILE_APPEND | LOCK_EX);
+	request(createSlackPostOptions($info));
+
+	if($debug!="") {
+		file_put_contents($debug, $contents."\n", FILE_APPEND | LOCK_EX);
+	}
 }
 ?>
