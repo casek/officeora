@@ -66,7 +66,13 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		file_put_contents($debug, $data, FILE_APPEND | LOCK_EX);
 	}
 	$creator = $payload['project_card']['creator']['login'];
-	$creatorUrl = $payload['project_card']['creator']['url'];
+	$creatorUrl = $payload['project_card']['creator']['html_url'];
+
+	// get projects info
+	$options = createGitHubGetOptions($payload["project_card"]['project_url']);
+	$res = request($options);
+	$projectName = $res['name'];
+	$projectUrl = $res['html_url'];
 
 	// get card info
 	$options = createGitHubGetOptions($payload["project_card"]['url']);
@@ -75,7 +81,6 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		$options = createGitHubGetOptions($res['content_url']);
 		$res = request($options);
 		$noteBody = $res['title'];
-		$noteUrl = $res['url'];
 		$isNote = false;
 	} else { // note
 		if(mb_strlen($res['note'])>20) {
@@ -83,15 +88,9 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 		} else {
 			$noteBody = $res['note'];
 		}
-		$noteUrl = $res['url'];
 		$isNote = true;
 	}
-
-	// get projects info
-	$options = createGitHubGetOptions($payload["project_card"]['project_url']);
-	$res = request($options);
-	$projectName = $res['name'];
-	$projectUrl = $res['url'];
+	$noteUrl = $projectUrl."#card-".$res['id'];
 
 	// get columns info
 	$options = createGitHubGetOptions($payload["project_card"]['column_url']);
