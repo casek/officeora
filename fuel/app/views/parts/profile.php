@@ -12,11 +12,11 @@
                                     <h2 class="section-title uppercase"><img src="/assets/img/casek.png" class="hello-casek-img">こんにちは。オフィスORAです</h2>
 
                                     <p>
-                                        オフィスORAは六藤圭介（ムトウケイスケ）が20年に渡り運営しているIT系個人事業です。
+                                        オフィスORAは六藤圭介（ムトウケイスケ）が25年に渡り運営しているIT系個人事業です。
                                     </p>
 
                                     <p>
-                                        「価値」を生みつづける為のITプロジェクトをあらゆる形でサポートします。
+                                        「価値」を生みつづける為のITプロジェクトをあらゆる形でサポートするサービスを行っています。
                                     </p>
 
                                     <span class="divider"></span>
